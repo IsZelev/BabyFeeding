@@ -2,26 +2,37 @@ import java.util.ArrayList;
 
 public class Dish
 {
-    private ArrayList<Integer> bites;
-    private int food;
+    private ArrayList<Integer> bites = new ArrayList<Integer>();
+    private int pot;
     private int capacity;
 
     public Dish(int f)
     {
-        food = f;
+        pot = f; //la pentola da cui il padre prende i bocconi
         capacity = 10;
     }
 
-    public void produceBites()
+    public int getFoodLeft()
     {
+        return bites.size();
+    }
+
+    public int getCapacity()
+    {
+        return capacity;
+    }
+
+    public void produceBites(int b)
+    {
+        int qty = b;
         for (int i = 0; i < capacity; i++)
         {
-            food--;
-            if(food != 0)
+            if(pot != 0)
             {
+                pot -= qty;//toglie i bocconi dalla pentola
                 bites.add(1);
             }else
-            {
+            {//quando i bocconi nella pentola finiscono
                 System.out.println("Cibo terminato");
             }
         }
@@ -29,10 +40,7 @@ public class Dish
 
     public void consume()
     {
-        for (int i = 0; i < capacity; i++)
-        {
-            
-        }
+        bites.removeLast();    
     }
 
 }

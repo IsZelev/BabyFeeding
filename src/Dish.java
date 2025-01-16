@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Dish
 {
-    private ArrayList<Integer> bites = new ArrayList<Integer>();
+    private ArrayList<Integer> bites;
     private int pot;
     private int capacity;
 
@@ -10,6 +10,7 @@ public class Dish
     {
         pot = f; //la pentola da cui il padre prende i bocconi
         capacity = 10;
+        bites = new ArrayList<Integer>();
     }
 
     public int getFoodLeft()
@@ -40,7 +41,7 @@ public class Dish
 
     public void consume()
     {
-        bites.removeLast();    
+        bites.remove(0);
     }
 
 }

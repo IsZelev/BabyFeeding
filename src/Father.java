@@ -23,13 +23,16 @@ public class Father implements Runnable
             }else
             {
                 System.out.println("tutti quei bocconi non entreranno nel piatto per ora");
-                try
+                /*
+                    inserire il wait nella risorsa condivisa e il sleep nei thread
+                 * try
                 {
                     wait();
                 } catch (InterruptedException e)
                 {
                     e.printStackTrace();
                 }
+                 */
             }
         }
         System.out.println("il bambino non ha più fame");

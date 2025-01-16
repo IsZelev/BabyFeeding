@@ -32,6 +32,7 @@ public class Dish
             {
                 pot -= qty;//toglie i bocconi dalla pentola
                 bites.add(1);
+                System.out.println("prodotto il boccone numero " + i);
             }else
             {//quando i bocconi nella pentola finiscono
                 System.out.println("Cibo terminato");
@@ -41,7 +42,8 @@ public class Dish
 
     public void consume()
     {
-        bites.remove(0);
+        bites.removeFirst();
+        
     }
 
 }
